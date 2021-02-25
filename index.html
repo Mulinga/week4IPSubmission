@@ -4,103 +4,11 @@
 <head>
     <meta charset="utf-8">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="bootstrap/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <title>Week 2 Independent Project</title>
 
-    <title>Bootstrap Practice</title>
-    <script>
-        function validateDate() {
-            var date;
-            date = Number(document.getElementById("date").value);
-            if (date <= 0 || date > 31) {
-                alert("Invalid Date");
-                return false;
-            } else if (date > 1 || date <= 31) {
-                alert("Looks Good!");
-                return false;
-            }
-
-        };
-
-        function validateMonth() {
-            var month;
-            month = Number(document.getElementById("month").value);
-            if (month <= 0 || month > 12) {
-                alert("Invalid Month");
-                return false;
-            } else if (month > 0 || date <= 12) {
-                alert("Looks Good!");
-                return false;
-            }
-
-        };
-
-        function dayBorn() {
-            var dayofWeek;
-            var d;
-            var centuryDigits = year.slice(0, 1);
-            var yearDigits = year.slice(2, 3);
-            var month;
-            var day;
-            dayofWeek = (((centuryDigits / 4) - 2 * CenturyDigits - 1) + ((5 * yearDigits / 4)) + 26 * ((month + 1) / 10) + day) % 7;
-        }
-
-        function akanName() {
-            var gender;
-            var dayofWeek;
-            var ghanaName
-            ghanaName = Number(document.getElementbyId("gender").value);
-            if (gender == "male");
-            switch (dayofWeek) {
-                case 1:
-                    alert("Your Akan Name is Kwasi");
-                    break;
-                case 2:
-                    alert("Your Akan Name is Kwado");
-                    break;
-                case 3:
-                    alert("Your Akan Name is Kwabena");
-                    break;
-                case 4:
-                    alert("Your Akan Name is Kwaku");
-                    break;
-                case 5:
-                    alert("Your Akan Name is Yaw");
-                    break;
-                case 6:
-                    alert("Your Akan Name is Kofi");
-                    break;
-                case 7:
-                    alert("Your Akan Name is Kwame");
-                    break;
-            }
-            elseif(gender == "female");
-            switch (dayofWeek) {
-                case 1:
-                    alert("Your Akan Name is Akosua");
-                    break;
-                case 2:
-                    alert("Your Akan Name is Adwoa");
-                    break;
-                case 333:
-                    alert("Your Akan Name is Abenaa");
-                    break;
-                case 4:
-                    alert("Your Akan Name is Akua");
-                    break;
-                case 5:
-                    alert("Your Akan Name is Yaa");
-                    break;
-                case 6:
-                    alert("Your Akan Name is Afua");
-                    break;
-                case 7:
-                    alert("Your Akan Name is Ama");
-                    break;
-            } {
-                alert("Nothing to Calculate here");
-            }
-
-        };
-    </script>
 </head>
 <br><br>
 
@@ -113,22 +21,47 @@
             <p>This Program will input the day of birth, basing on the date and year one was born. At the same time, the program will also determine the <strong>Akan Name</strong> of the Individual</p>
         </div>
     </div>
-    <div class="container" align="centered">
-        <div class="jumbotron">
+    <center>
+        <div class="container">
+            <div class="jumbotron">
+                <label>Date of Birth</label>
+                <div class="col-lg-3">
+                    <input type="number" id="date" class="form-control" placeholder="Enter Date of Birth" required/>
+                    <button type="button" onclick="validateDate()" class="form-control"> Validate Date</button>
+                </div>
 
-            Enter <strong>Date</strong> of Birth: <input id="date">
-            <button onclick="validateDate()">Verify Date</button><br><br> Enter <strong>Month</strong> of Birth: <input id="month">
-            <button onclick="validateDate()">Verify Date</button><br><br> Enter <strong>Year</strong> of Birth: <input id="year">
-            <!--button onclick="validateDate()">Verify Date</button--><br><br> Enter Gender: <input id="gender">
-            <br><br> Display Day of Week Born: <input type="text" id="dayofWeek"> <button onclick="dayBorn()">Day of Week Born</button>
-            <br><br><br>
-            <!--center><a class="btn btn-primary btn-lg" onclick="akanName()" role="button">Get Akan Name</a></center-->
-            <center><button onclick="akanName() ">Get Akan Name</button></center>
-            </script>
+                <label>Month of Birth</label>
+                <div class="col-lg-3">
+                    <input type="number" id="month" class="form-control" placeholder="Enter month of Birth" required/>
+                    <button type="button" onclick="validateMonth()" class="form-control"> Validate Month</button>
+                </div>
+
+                <label>Year of Birth</label>
+                <div class="col-lg-3">
+                    <input type="number" id="year" class="form-control" placeholder="Enter Year of Birth" min="0" max="4" required/>
+                    <!--button type="button" class="form-control"> Validate Year</button>-->
+                </div>
+
+                <label>Day Born</label>
+                <div class="col-lg-3">
+                    <input type="number" id="dayweek" class="form-control" placeholder="Day Born" />
+                    <button type="button" onclick="dayBorn()" class="form-control"> Day Born</button>
+                </div>
+                <p>
+                    <div class="col-lg-3">
+                        <select name="gender" id="gender" class="form-control">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+               </select>
+                    </div>
+                    <br><br>
+                    <center><button onclick="akanName()" class="btn btn-success">Get Akan Name</button></center>
+                </p>
+            </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </center>
+
 </body>
 
 </html>
