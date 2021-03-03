@@ -1,8 +1,7 @@
-# About Week2IP
-This is a simple program in JavaScript that takes in the day, month and year one was born, as well as the gender. 
-The program then outputs their Akan name, based on the day a person was born.
+# About Week4IP
+This is a simple program in JavaScript that implements the concept of a pizzeria using constructors and inherited functions using JQuery
 # Date Published 
-24/02/2021
+04/03/2021
 # Author    
 *Charles Kyalo Mulinga*
 ## Description
