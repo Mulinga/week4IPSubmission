@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link href="bootstrap/css/styling.css" rel="stylesheet" type="text/css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="bootstrap/js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -12,54 +13,70 @@
 </head>
 <br><br>
 
-<body>
+<body background="images/pizza.jpeg">
     <div class="container">
         <div class="jumbotron">
             <center>
-                <h1>Calculating Day of Birth and AKAN Name</h1>
+                <h1>Mulinga's Pizzeria</h1>
+                <img src="images/eat-pizza.jpg" width="250" height="245"><br><br>
             </center>
-            <p>This Program will input the day of birth, basing on the date and year one was born. At the same time, the program will also determine the <strong>Akan Name</strong> of the Individual</p>
+            <h2> Order some of the best pizza in town!!! Visit <strong>Mulinga Pizzeria</strong> Today, or dial +254703560774</h2><br><br>
+            <p>To place an order, fill out the form below!!!</p>
         </div>
     </div>
     <center>
         <div class="container">
             <div class="jumbotron">
-                <label>Date of Birth</label>
+                <label>Choose Size of Pizza</label>
                 <div class="col-lg-3">
-                    <input type="number" id="date" class="form-control" placeholder="Enter Date of Birth" required/>
-                    <button type="button" onclick="validateDate()" class="form-control"> Validate Date</button>
-                </div>
+                    <select name="size" id="size" class="form-control">
+                    <option value="">Select Size</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    </select><br>
+                    <button onclick="sizeCost()" class="a">Cost of Size</button>
+                </div><br>
 
-                <label>Month of Birth</label>
+                <label>Choose Type of Crust</label>
                 <div class="col-lg-3">
-                    <input type="number" id="month" class="form-control" placeholder="Enter month of Birth" required/>
-                    <button type="button" onclick="validateMonth()" class="form-control"> Validate Month</button>
-                </div>
+                    <select name="crust" id="crust" class="form-control">
+                    <option value="">Crust Type</option>
+                    <option value="crispy">Crispy</option>
+                    <option value="stuffed">Stuffed</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                    </select><br>
+                    <button onclick="crustCost()" class="a">Cost of Crust</button>
+                </div><br>
 
-                <label>Year of Birth</label>
+                <label>Choose Toppings on Pizza</label>
                 <div class="col-lg-3">
-                    <input type="number" id="year" class="form-control" placeholder="Enter Year of Birth" min="0" max="4" required/>
-                    <!--button type="button" class="form-control"> Validate Year</button>-->
-                </div>
+                    <select name="toppings" id="toppings" class="form-control">
+                    <option value="">Toppings</option>
+                    <option value="cheese">Cheese and Onion</option>
+                    <option value="hawaian">Hawaian Toppings</option>
+                    <option value="none">None</option>
+                    </select><br>
+                    <button onclick="toppingsCost()" class="a">Cost of Topping</button>
+                </div><br>
 
-                <label>Day Born</label>
+                <label>Number of Pizzas</label>
                 <div class="col-lg-3">
-                    <input type="number" id="dayweek" class="form-control" placeholder="Day Born" />
-                    <button type="button" onclick="dayBorn()" class="form-control"> Day Born</button>
+                    <input type="number" id="number-of-pizzas" class="form-control" placeholder="Number of Pizzas" />
+                </div><br>
+
+                <label>Want Delivered?</label>
+                <div class="col-lg-3">
+                    <select name="delivery" id="delivery" class="form-control">
+                    <option value="">Delivered</option>
+                    <option value="cheese">Yes</option>
+                    <option value="hawaian">No Delivery</option>
+                    </select>
+                </div><br>
+                <div class="col-lg-3">
+                    <center><button onclick="totalCost()" class="btn btn-outline-success">Total Cost</button></center>
                 </div>
-                <p>
-                    <div class="col-lg-3">
-                        <select name="gender" id="gender" class="form-control">
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-               </select>
-                    </div>
-                    <br><br>
-                    <center><button onclick="akanName()" class="btn btn-success">Get Akan Name</button></center>
-                </p>
             </div>
-        </div>
     </center>
 
 </body>

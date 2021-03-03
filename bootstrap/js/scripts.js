@@ -1,125 +1,77 @@
-function validateDate() {
-    var date;
-    date = Number(document.getElementById("date").value);
-    if (date < 1 || date >= 32) {
-        alert("Invalid Date!");
-        return false;
-    }   else if (date >=1 || date <= 31) {
-        alert("Looks Good");
-        return false;
-    }
+function sizeCost() {
+    var size;
+    size = document.getElementById("size").value;
 
-};
-
-function validateMonth() {
-    var month;
-    month = document.getElementById("month").value;
-
-    if (month <= 0 || month > 12) {
-        alert("Invalid Month");
+    if (size = "small") {
+        alert("Will Cost you KES 500/-");
         return false;
-    } else if (month > 0 || date <= 12) {
-        alert("Looks Good!");
+    } else if (size = "medium") {
+        alert("Will Cost you KES 700/-");
+        return false;
+    } else if (size = "large") {
+        alert("Will Cost you KES 1000/-");
         return false;
     }
 
 };
 
-function dayBorn() {
-    var dayofWeek;
-    var d;
-    var year = document.getElementById("year").value;
-    var centuryDigits = year.slice(0,2);
-    var yearDigits = year.substr(-2);
-    var month = document.getElementById("month").value;
-    var day   = document.getElementById("date").value;
-    d = parseInt((((centuryDigits / 4) - 2 * centuryDigits - 1) + ((5 * yearDigits / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
-    dayofWeek = d;
-    document.getElementById("dayweek").value=d;
+function crustCost() {
+    var crust;
+    crust = document.getElementById("crust").value;
 
-    return dayofWeek;
+    if (crust = "crispy") {
+        alert("A small crispy pizza costs KES 500/-");
+        return false;
+    } else if (crust = "stuffed") {
+        alert("A Small stuffed pizza costs KES 800/-");
+        return false;
+    } else if (crust = "gluten-free") {
+        alert("A small gluten-free pizza costs KES 1000/-");
+        return false;
+    }
 
 };
 
-function akanName() {
+function toppingsCost() {
+    var toppings;
+    crust = document.getElementById("toppings").value;
 
-    var year = document.getElementById("year").value;
-    var gender;
-    var dayofWeek = dayBorn();
-    var ghanaName;
-console.log(dayofWeek);
-    ghanaName = document.getElementById("gender").value;
-
-    switch(ghanaName){
-
-        case("male"):
-
-        switch(dayofWeek){
-
-                 case 1:
-                  alert("Your Akan Name is Kwasi");
-                break;
-
-                 case 2:
-                  alert("Your Akan Name is Kwado");
-                break;
-
-                 case 3:
-                  alert("Your Akan Name is Kwabena");
-                break;
-                
-                 case 4:
-                  alert("Your Akan Name is Kwaku");
-                break;
-                
-                 case 5:
-                  alert("Your Akan Name is Yaw");
-                break;
-                
-                 case 6:
-                  alert("Your Akan Name is Kofi");
-                break;
-                
-                 case 7:
-                  alert("Your Akan Name is Kwame");
-                break;
-
-        }
-
-        break;
-        case("female"):
-
-        switch(dayofWeek){
-
-                 case 1:
-                  alert("Your Akan Name is Akosua");
-                break;
-
-                 case 2:
-                  alert("Your Akan Name is Adwoa");
-                break;
-
-                 case 3:
-                  alert("Your Akan Name is Abenaa");
-                break;
-                
-                 case 4:
-                  alert("Your Akan Name is Akua");
-                break;
-                
-                 case 5:
-                  alert("Your Akan Name is Yaa");
-                break;
-                
-                 case 6:
-                  alert("Your Akan Name is Afua");
-                break;
-                
-                 case 7:
-                  alert("Your Akan Name is Ama");
-                break;
+    if (toppings = "cheese") {
+        alert("A small cheese-topped pizza costs 600/-");
+        return false;
+    } else if (toppings = "hawaian") {
+        alert("A Small hawaian-topped pizza costs KES 700/-");
+        return false;
+    } else if (toppings = "none") {
+        alert("A small pizza without toppings is KES 500/-");
+        return false;
     }
 
-    break;
-}
+};
+
+
+function totalCost() {
+
+    let total;
+    var size_of_pizza = document.getElementById("size").value;
+    var crust_of_pizza = document.getElementById("crust").value;
+    var toppings_on_pizza = document.getElementById("toppings").value;
+    var number_of_pizzas = document.getElementById("number-of-pizzas").value;
+    var delivery = document.getElementById("delivery").value;
+
+    switch (size_of_pizza) {
+        case ("small"):
+            switch (crust_of_pizza) {
+                case ("crispy"):
+                    switch (toppings_on_pizza) {
+                        case ("cheese"):
+                            switch (delivery) {
+                                case ("yes"):
+                                    total = (500 + 100 + 200) * number_of_pizzas;
+                                    break;
+                            }
+                    }
+            }
+    }
+    return total;
 };
